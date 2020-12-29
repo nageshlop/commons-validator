@@ -14,9 +14,6 @@
 # limitations under the License.
 
 language: java
-arch:
-  - amd64
-  - ppc64le
 cache:
   directories:
     - $HOME/.m2
@@ -25,6 +22,14 @@ matrix:
     - jdk: openjdk8
     - jdk: openjdk11
     - jdk: openjdk15
+# ppc64le support code
+    - jdk: openjdk8
+      arch: ppc64le
+    - jdk: openjdk11
+      arch: ppc64le
+    - jdk: openjdk15
+      arch: ppc64le
+
 script:
   - mvn -V --no-transfer-progress clean test
 after_success:
