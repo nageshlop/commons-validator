@@ -23,12 +23,9 @@ matrix:
     - jdk: openjdk11
     - jdk: openjdk15
 # ppc64le support code
-    - jdk: openjdk8
-      arch: ppc64le
-    - jdk: openjdk11
-      arch: ppc64le
     - jdk: openjdk15
       arch: ppc64le
+      dist: focal
 
 script:
   - mvn -V --no-transfer-progress clean test
